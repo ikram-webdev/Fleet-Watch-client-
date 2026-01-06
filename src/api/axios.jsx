@@ -1,7 +1,3 @@
-import axios from 'axios';
-
 const API = axios.create({
-    baseURL: 'http://localhost:5000/api', // Backend server ka URL
+  baseURL: "https://fleet-watch.onrender.com", 
 });
-
-export default API;
