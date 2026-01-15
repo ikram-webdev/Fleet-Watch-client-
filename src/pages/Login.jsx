@@ -13,11 +13,11 @@ const Login = () => {
 
   const showAlert = (title, icon, text = '') => {
     Swal.fire({
-  title: 'Welcome Ikram Kamboh!',
+  title: 'Welcome "<title>"',
   icon: 'success',
-  timer: 2000, 
-  showConfirmButton: false, 
-  background: '#1f2937dc', 
+  timer: 2000, // 2 second baad khud khatam
+  showConfirmButton: false, // OK button gayab
+  background: '#1f2937', // Dark theme ke liye (optional)
   color: '#fff'
 });
   };
