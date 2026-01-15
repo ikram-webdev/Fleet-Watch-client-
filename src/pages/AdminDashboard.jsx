@@ -296,7 +296,7 @@ const AdminDashboard = () => {
 
       {/* Main Content */}
 
-      <div className="flex justify-between items-center w-full px-4 py-2">
+      <div className="content-area p-4 w-100 overflow-auto">
 
         <div className="d-flex align-items-center mb-4 p-3 glass-card shadow-sm animate__animated animate__fadeInDown">
 
