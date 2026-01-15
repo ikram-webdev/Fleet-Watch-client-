@@ -296,12 +296,14 @@ const AdminDashboard = () => {
 
       {/* Main Content */}
 
-      <div className="content-area p-4 w-100 overflow-auto">
+      <div className="flex justify-between items-center w-full px-4 py-2">
 
         <div className="d-flex align-items-center mb-4 p-3 glass-card shadow-sm animate__animated animate__fadeInDown">
 
           <h5 className="mb-0 text-white fw-light">FleetWatch / <span className="fw-bold text-info" style={{ textTransform: "capitalize" }}>{activeTab}</span></h5>
-          <h6 className="gray"><i>Login as an Admin</i></h6>
+          <div className="text-gray-400 text-sm italic">
+    Login as an Admin
+  </div>
         </div>
 
 
