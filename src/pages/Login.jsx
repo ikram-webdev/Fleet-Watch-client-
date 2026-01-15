@@ -13,11 +13,11 @@ const Login = () => {
 
   const showAlert = (title, icon, text = '') => {
     Swal.fire({
-  title: 'Welcome "<title>"',
+  title: `Welcome ${title}!`,
   icon: 'success',
   timer: 2000, // 2 second baad khud khatam
   showConfirmButton: false, // OK button gayab
-  background: '#1f2937', // Dark theme ke liye (optional)
+  background: '#1d2e45ff', // Dark theme ke liye (optional)
   color: '#fff'
 });
   };
