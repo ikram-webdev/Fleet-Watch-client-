@@ -13,13 +13,13 @@ const Login = () => {
 
   const showAlert = (title, icon, text = '') => {
     Swal.fire({
-      title: title,
-      text: text,
-      icon: icon,
-      background: '#1a1a1a',
-      color: '#fff',
-      confirmButtonColor: '#00df9a'
-    });
+  title: 'Welcome Ikram Kamboh!',
+  icon: 'success',
+  timer: 2000, 
+  showConfirmButton: false, 
+  background: '#1f2937dc', 
+  color: '#fff'
+});
   };
 
   const handleAuth = async (e) => {
