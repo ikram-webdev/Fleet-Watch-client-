@@ -301,7 +301,7 @@ const AdminDashboard = () => {
         <div className="d-flex align-items-center mb-4 p-3 glass-card shadow-sm animate__animated animate__fadeInDown">
 
           <h5 className="mb-0 text-white fw-light">FleetWatch / <span className="fw-bold text-info" style={{ textTransform: "capitalize" }}>{activeTab}</span></h5>
-
+          <h6 style={gray}>Login as an Admin</h6>
         </div>
 
 
