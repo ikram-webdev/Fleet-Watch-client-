@@ -16,14 +16,17 @@ const Login = () => {
   });
   const navigate = useNavigate();
 
+  // --- Fixed Dynamic Alert ---
   const showAlert = (title, icon, text = "") => {
     Swal.fire({
-      title: `Welcome ${title}!`,
-      icon: "success",
-      timer: 2000,
-      showConfirmButton: false,
+      title: title, // Ab ye wahi title dikhayega jo aap pass karenge
+      text: text,
+      icon: icon, // success ya error dynamic hoga
+      timer: 3000,
+      showConfirmButton: icon === "error", // Error par button dikhayega taake user parh sakay
       background: "#1d2e45ff",
       color: "#fff",
+      confirmButtonColor: "#00e5ff",
     });
   };
 
@@ -41,14 +44,10 @@ const Login = () => {
 
     try {
       if (isSignup) {
-        // --- Signup Logic ---
-
         await API.post("/auth/register", formData);
         showAlert("Account Created!", "success", "Please login to continue.");
         setIsSignup(false);
       } else {
-        // --- Login Logic ---
-
         const res = await API.post("/auth/login", {
           email: formData.email,
           password: formData.password,
@@ -74,23 +73,36 @@ const Login = () => {
         err.response?.data?.message ||
         err.response?.data?.error ||
         "Something went wrong!";
-
-      showAlert("Auth Error", "error", errorMessage);
+      // Ab ye "Login Failed" dikhayega "Welcome Auth Error" ki jagah
+      showAlert("Login Failed", "error", errorMessage);
     }
   };
 
+  // --- Forgot Password Integrated with Backend ---
   const handleForgotPassword = () => {
     Swal.fire({
       title: "Reset Password",
       input: "email",
-      inputPlaceholder: "Enter your email",
+      inputPlaceholder: "Enter your registered email",
       showCancelButton: true,
       confirmButtonText: "Send Link",
+      confirmButtonColor: "#00e5ff",
       background: "#1a1a1a",
       color: "#fff",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        showAlert("Reset link sent!", "success", "Check your email inbox.");
+    }).then(async (result) => {
+      if (result.isConfirmed && result.value) {
+        try {
+          // Backend call for forgot password
+          await API.post("/auth/forgot-password", { email: result.value });
+          showAlert(
+            "Email Sent!",
+            "success",
+            "Please check your inbox for the reset link."
+          );
+        } catch (err) {
+          const errMsg = err.response?.data?.message || "Email not found!";
+          showAlert("Error", "error", errMsg);
+        }
       }
     });
   };
