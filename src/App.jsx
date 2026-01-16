@@ -4,6 +4,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import DriverDashboard from "./components/DriverDashboard";
 import UsageReports from "./components/UsageReports";
 import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
         <Route
           path="/driver"
           element={
