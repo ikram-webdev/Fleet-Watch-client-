@@ -308,7 +308,6 @@ const AdminDashboard = () => {
 
         <div className="glass-container-wide text-white">
 
-          {/* TAB: OVERVIEW - Added Charts and Zoom Animation */}
 
           {activeTab === "overview" && (
 
@@ -371,10 +370,6 @@ const AdminDashboard = () => {
             </div>
 
           )}
-
-
-
-          {/* TAB: VEHICLES - Added FadeInRight Animation */}
 
           {activeTab === "vehicles" && (
 
@@ -460,10 +455,6 @@ const AdminDashboard = () => {
 
           )}
 
-
-
-          {/* TAB: DRIVERS - Added FadeInLeft Animation */}
-
           {activeTab === "drivers" && (
 
             <div className="animate__animated animate__fadeIn">
@@ -547,10 +538,6 @@ const AdminDashboard = () => {
             </div>
 
           )}
-
-
-
-          {/* TAB: ASSIGNMENTS - Added ZoomIn Animation */}
 
           {activeTab === "assign" && (
 
